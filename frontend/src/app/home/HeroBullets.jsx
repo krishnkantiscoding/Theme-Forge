@@ -12,7 +12,7 @@ export function HeroBullets() {
            A <span className={classes.highlight}> modern</span> VsCode <br /> Theme Extensions
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional Vs Code custom Theme Extensions faster than ever – Theme forge includes
+            Build fully functional Vs Code custom Theme Extensions faster than ever - Theme forge includes
             multiple customizable options and provide you with Beautiful and exclusive Themes.
           </Text>
 
