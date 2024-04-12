@@ -9,11 +9,11 @@ export function HeroBullets() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            A <span className={classes.highlight}>modern</span> React <br /> components library
+           A <span className={classes.highlight}> modern</span> VsCode <br /> Theme Extensions
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional accessible web applications faster than ever – Mantine includes
-            more than 120 customizable components and hooks to cover you in any situation
+            Build fully functional Vs Code custom Theme Extensions faster than ever – Theme forge includes
+            multiple customizable options and provide you with Beautiful and exclusive Themes.
           </Text>
 
           <List

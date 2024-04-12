@@ -19,6 +19,7 @@ import { GoogleButton } from './GoogleButton';
 import {GithubIcon} from '@mantinex/dev-icons';
 import classes from './social.module.css';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 export function GithubButton(props) {
   return (
@@ -31,7 +32,9 @@ export function GithubButton(props) {
 }
 
 function Signup(props) {
-  const [type, toggle] = useToggle(['login', 'register']);
+
+  const router = useRouter();
+
   const form = useForm({
     initialValues: {
       email: '',
@@ -56,7 +59,8 @@ function Signup(props) {
     .then((response) => {
       console.log(response.status);
       if(response.status === 200){
-        toast.success('User Registered Successfully')
+        toast.success('User Registered Successfully');
+        router.push('/login');
       }else{
         toast.error('Some Error Occured')
       }
@@ -70,7 +74,7 @@ function Signup(props) {
     <Container size='sm'>
     <Paper radius="md" p="xl" withBorder {...props}>
       <Text size="lg" fw={500}>
-        Welcome to Theme Forge, {type} with
+        Welcome to Theme Forge, Register with
       </Text>
 
       <Group grow mb="md" mt="md">
@@ -128,7 +132,7 @@ function Signup(props) {
           <Anchor component="button" type="button" c="dimmed" onClick={() => toggle()} size="xs">
             Already have an account?Login
           </Anchor>
-          <Button type="submit" radius="xl" color='teal'>
+          <Button type="submit" radius="xl">
             Signup
           </Button>
         </Group>

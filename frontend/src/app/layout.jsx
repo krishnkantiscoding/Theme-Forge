@@ -12,13 +12,12 @@ export const metadata = {
 };
 
 const theme = createTheme({
-  /** Put your mantine theme override here */
+  primaryColor: 'teal'
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
       <body className={inter.className}>
         <MantineProvider theme={theme} defaultColorScheme="dark">
           <Toaster position="top-center"/>

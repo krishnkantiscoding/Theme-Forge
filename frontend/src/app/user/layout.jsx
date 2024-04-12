@@ -2,6 +2,7 @@
 import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
 export default function Layout({children}) {
   const [opened, { toggle }] = useDisclosure();
@@ -16,10 +17,10 @@ export default function Layout({children}) {
       padding="md"
     >
       <AppShell.Header>
-        
       </AppShell.Header>
       <AppShell.Navbar>
-        <Sidebar />
+        {/* <Sidebar /> */}
+          <Navbar/>
       </AppShell.Navbar>
       <AppShell.Main>
         {children}

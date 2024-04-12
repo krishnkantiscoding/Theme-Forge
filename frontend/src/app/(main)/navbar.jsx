@@ -1,14 +1,16 @@
 'use client';
 import React from 'react'
 import { useState } from 'react';
-import { Container, Group, Burger, Title } from '@mantine/core';
+import { Container, Group, Burger, Title, Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './navbar.module.css';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const links = [
-  { link: '/about', label: 'Features' },
-  { link: '/pricing', label: 'Pricing' },
-  { link: '/learn', label: 'Learn' },
+  { link: '/signup', label: 'Signup' },
+  { link: '/login', label: 'Login' },
+  { link: '/user/builder', label: 'Customize' },
   { link: '/community', label: 'Community' },
 ];
 
@@ -16,19 +18,18 @@ export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
 
+  const router = useRouter();
+  // console.log(router.);
   const items = links.map((link) => (
-    <a
+    <Button
+      component={Link}
       key={link.label}
       href={link.link}
-      className={classes.link}
-      data-active={active === link.link || undefined}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-      }}
+      variant='transparent'
+      // data-active={pathname === link.link || undefined}
     >
       {link.label}
-    </a>
+    </Button>
   ));
 
   return (
