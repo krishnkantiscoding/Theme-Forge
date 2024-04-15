@@ -5,7 +5,7 @@ import classes from './NavbarLinksGroup.module.css';
 
 
 
-export function LinksGroup({ icon: Icon, label, initiallyOpened, links }) {
+export function LinksGroup({ icon: Icon, label, initiallyOpened, links, setSelComponent }) {
   const hasLinks = Array.isArray(links);
   const [opened, setOpened] = useState(initiallyOpened || false);
   const items = (hasLinks ? links : []).map((link) => (
@@ -14,7 +14,10 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }) {
       className={classes.link}
       href={link.link}
       key={link.label}
-      onClick={(event) => event.preventDefault()}
+      onClick={(event) => {
+        event.preventDefault(
+          setSelComponent(link.options)
+        )}}
     >
       {link.label}
     </Text>
