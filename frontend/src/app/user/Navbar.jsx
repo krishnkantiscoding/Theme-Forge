@@ -14,10 +14,13 @@ import {
   IconAlignBoxBottomRight,
   IconAdjustmentsUp,
 } from '@tabler/icons-react';
-import { UserButton } from './UserButton/UserButton';
+import {
+  UserButton
+} from './UserButton/UserButton';
 import { LinksGroup } from './NavbarLinksGroup/NavbarLinksGroup';
 import classes from './NavbarNested.module.css';
 import useCustomizerContext from '@/context/CustomizerContext';
+import { useEffect } from 'react';
 
 const mockdata = [
   {
@@ -363,16 +366,48 @@ const mockdata = [
   },
 ];
 
+const colorCategories = [
+  'general',
+  'activityBar',
+  'sideBar',
+  'list',
+  'tree',
+  'listFilterWidget',
+]
+
+const filterCategory = (propertyName, category) => {
+  return propertyName.startsWith(category);
+}
+
 export default function NavbarNested({ setSelComponent }) {
-  const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} setSelComponent={setSelComponent} />);
+  const { VSCodeThemeObject, isObjectLoading } = useCustomizerContext();
+  const links = colorCategories.map(category => (
+    {
+      label: category,
+      icon: IconAlignBoxBottomLeft,
+      links: Object.keys(VSCodeThemeObject.colors).filter(propertyName => filterCategory(propertyName, category)).map(propertyName => (
+        {
+          label: propertyName,
+          link: '/',
+          options: {
+            color: VSCodeThemeObject.colors[propertyName]
+          }
+        }
+      ))
+    }
+  )).map((item) => <LinksGroup {...item} key={item.label} setSelComponent={setSelComponent} />);
 
-  const { VSCodeThemeObject } = useCustomizerContext();
+  // console.log(VSCodeThemeObject);
 
-  const categoriesThemeObject = Object.keys(VSCodeThemeObject.colors).filter((themeObject) => {
-    return colorCategories.some((category) => filterCategory(themeObject.name, category));
-  });
+  useEffect(() => {
+    // console.log(Object.keys(VSCodeThemeObject.colors));
+    // console.log(VSCodeThemeObject);
+    // const navLinks = 
+    // console.log(navLinks);
+  }, [])
 
-  console.log(categoriesThemeObject);
+
+
 
   return (
     <nav className={classes.navbar}>

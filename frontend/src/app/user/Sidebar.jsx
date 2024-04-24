@@ -39,18 +39,7 @@ const linksMockdata = [
   'Wiki pages',
 ];
 
-const colorCategories = [
-  'general',
-  'activityBar',
-  'sideBar',
-  'list',
-  'tree',
-  'listFilterWidget',
-]
 
-const filterCategory = (propertyName, category) => {
-  return propertyName.startsWith(category);
-}
 
 function Sidebar() {
   const [active, setActive] = useState('Releases');

@@ -15,9 +15,9 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links, setSelCo
       href={link.link}
       key={link.label}
       onClick={(event) => {
-        event.preventDefault(
-          setSelComponent(link.options)
-        )}}
+        event.preventDefault()
+        // setSelComponent(link.options)
+      }}
     >
       {link.label}
     </Text>
