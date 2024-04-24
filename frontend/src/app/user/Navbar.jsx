@@ -8,6 +8,10 @@ import {
   IconAdjustments,
   IconLock,
   IconCode,
+  IconGalaxy,
+  IconAlignBoxBottomLeft,
+  IconAlignBoxBottomRight,
+  IconAdjustmentsUp,
 } from '@tabler/icons-react';
 import { UserButton } from './UserButton/UserButton';
 import { LinksGroup } from './NavbarLinksGroup/NavbarLinksGroup';
@@ -15,7 +19,7 @@ import classes from './NavbarNested.module.css';
 
 const mockdata = [
   { label: 'General', 
-  icon: IconCode, 
+  icon: IconAlignBoxBottomLeft, 
   links: [
     { label: 'foreground', link: '/', options: {
       color: '#fff'
@@ -35,7 +39,7 @@ const mockdata = [
   ], },
   {
     label: 'Side Bar',
-    icon: IconNotes,
+    icon: IconAdjustments,
     links: [
       { label: 'sideBar.background', link: '/', options: {
         color: '#fff'
@@ -49,7 +53,7 @@ const mockdata = [
       { label: 'sideBarSectionHeader.border', link: '/', options: {
         color: '#fff'
       } },
-      { label: 'sideBarTitle.foregroud', link: '/',options: {
+      { label: 'sideBarTitle.foreground', link: '/',options: {
         color: '#fff'
       } },
       { label: 'sideBar.border', link: '/', options: {
@@ -71,7 +75,7 @@ const mockdata = [
     ],
   },
   { label: 'Title Bar', 
-  icon: IconCode, 
+  icon: IconNotes, 
   links: [
     { label: 'titeBar.activeBackground', link: '/', options: {
       color: '#fff'
@@ -118,7 +122,7 @@ const mockdata = [
     
   ], },
   { label: 'Status Bar', 
-  icon: IconCode, 
+  icon: IconAlignBoxBottomRight, 
   links: [
     { label: 'statusBar.foreground', link: '/',options: {
       color: '#fff'
@@ -192,25 +196,41 @@ const mockdata = [
     } },
     { label: 'scrollbar.shadow', link: '/' },
   ], },
-  {
-    label: 'Status Bar',
-    icon: IconCalendarStats,
-    links: [
-      { label: 'Upcoming releases', link: '/' },
-      { label: 'Previous releases', link: '/' },
-      { label: 'Releases schedule', link: '/' },
-    ],
-  },
+  { label: 'Activity Bar', 
+  icon: IconCode, 
+  links: [
+    { label: 'foreground', link: '/', options: {
+      color: '#fff'
+    }},
+    { label: 'focusBorder', link: '/', options: {
+      color: '#fff'
+    }},
+    { label: 'progressBar.backgorund', link: '/', options: {
+      color: '#fff'
+    } },
+    { label: 'selection.background', link: '/', options: {
+      color: '#fff'
+    } },
+    { label: 'scrollbar.shadow', link: '/' },
+  ], },
 
-  {
-    label: 'Security',
-    icon: IconLock,
-    links: [
-      { label: 'Enable 2FA', link: '/' },
-      { label: 'Change password', link: '/' },
-      { label: 'Recovery codes', link: '/' },
-    ],
-  },
+  { label: 'Inputs', 
+  icon: IconCode, 
+  links: [
+    { label: 'foreground', link: '/', options: {
+      color: '#fff'
+    }},
+    { label: 'focusBorder', link: '/', options: {
+      color: '#fff'
+    }},
+    { label: 'progressBar.backgorund', link: '/', options: {
+      color: '#fff'
+    } },
+    { label: 'selection.background', link: '/', options: {
+      color: '#fff'
+    } },
+    { label: 'scrollbar.shadow', link: '/' },
+  ], },
 ];
 
 export default function NavbarNested({setSelComponent}) {

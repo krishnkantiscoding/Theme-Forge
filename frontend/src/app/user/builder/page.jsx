@@ -3,7 +3,7 @@ import React from 'react'
 const Builder = () => {
   return (
     <div>
-      <iframe src="https://vscode.dev" frameBorder="0" style={{ width: "100%", height: "500px" }} />
+      <img style={{width: '100%'}} src="/vscode_preview.png" alt="" />
     </div>
   )
 }

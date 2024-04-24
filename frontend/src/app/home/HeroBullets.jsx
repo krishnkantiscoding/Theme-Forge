@@ -52,5 +52,7 @@ export function HeroBullets() {
         <img src={'https://www.freecodecamp.org/news/content/images/2022/03/hero.png'} className={classes.image} />
       </div>
     </Container>
+    
   );
+    
 }
