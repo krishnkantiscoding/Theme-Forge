@@ -11,7 +11,7 @@ export const CustomizerProvider = ({children}) => {
         fetch('/defaultTheme.json')
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             setVSCodeThemeObject(data);
         })
         .catch((err) => {
@@ -34,6 +34,6 @@ export const CustomizerProvider = ({children}) => {
     
 }
 
-const useCustomizerProvider = () => useContext(CustomizerContext);
+const useCustomizerContext = () => useContext(CustomizerContext);
 
-export default useCustomizerProvider;
+export default useCustomizerContext;

@@ -13,6 +13,7 @@ import {
   IconSettings,
 } from '@tabler/icons-react';
 import classes from './sidebar.module.css';
+import { useCustomizerContext } from '@/context/CustomizerContext';
 
 const mainLinksMockdata = [
   { icon: IconHome2, label: 'Home' },
@@ -38,9 +39,24 @@ const linksMockdata = [
   'Wiki pages',
 ];
 
+const colorCategories = [
+  'general',
+  'activityBar',
+  'sideBar',
+  'list',
+  'tree',
+  'listFilterWidget',
+]
+
+const filterCategory = (propertyName, category) => {
+  return propertyName.startsWith(category);
+}
+
 function Sidebar() {
   const [active, setActive] = useState('Releases');
   const [activeLink, setActiveLink] = useState('Settings');
+
+  
 
   const mainLinks = mainLinksMockdata.map((link) => (
     <Tooltip
