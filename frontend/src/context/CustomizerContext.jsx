@@ -8,18 +8,6 @@ export const CustomizerProvider = ({ children }) => {
     const [selComponent, setSelComponent] = useState(null);
     const [themeObjectPromise, setThemeObjectPromise] = useState(null);
 
-    const loadThemeObject = () => {
-        fetch('/defaultTheme.json')
-            .then((response) => response.json())
-            .then(data => {
-                // console.log(data);
-                setVSCodeThemeObject(data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
-
     const isObjectLoading = () => {
         return VSCodeThemeObject.length === 0;
     }
