@@ -1,4 +1,5 @@
 'use client';
+import { BackgroundImage } from '@mantine/core';
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
 import classes from './HeroBullets.module.css';
@@ -49,7 +50,7 @@ export function HeroBullets() {
             </Button>
           </Group>
         </div>
-        <img src={'https://www.freecodecamp.org/news/content/images/2022/03/hero.png'} className={classes.image} />
+        <img src={'https://www.freecodecamp.org/news/content/images/2022/03/hero.png' }  className={classes.image} />
       </div>
     </Container>
     
