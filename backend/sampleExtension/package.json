@@ -1,0 +1,55 @@
+{
+  "name": "sampleExtension",
+  "displayName": "sampleExtension",
+  "description": "",
+  "publisher": "KrishnaKant",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krishnkantiscoding/sampleExtension"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sampleExtension.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "themes": [
+      {
+        "label": "mytheme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/themefile.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "myicontheme",
+        "label": "myicontheme",
+        "path": "./icons/icontheme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
