@@ -1,5 +1,6 @@
 import useCustomizerContext from '@/context/CustomizerContext';
-import { ColorPicker, Divider, Title } from '@mantine/core'
+import { Button, ColorPicker, Divider, Title } from '@mantine/core'
+import { IconDownload } from '@tabler/icons-react';
 import React, { useState } from 'react'
 
 const Toolbar = ({ selComponent }) => {
@@ -26,11 +27,14 @@ const Toolbar = ({ selComponent }) => {
     }
 
     const displayTools = () => {
-        if (selComponent) {
+        if (selComponent!==null) {
             return <div>
-                <ColorPicker format="hexa" value={colorValue} onChangeEnd={handleColorChange} />
-                <h3>{colorValue}</h3>
-                <button onClick={downloadThemeObject}>Download Theme Object</button>
+                <Title order={5} my={20} align="center">{selComponent.label}</Title>
+                <ColorPicker fullWidth format="hexa" value={colorValue} onChangeEnd={handleColorChange} />
+                <h3>Selectted Color : {colorValue}</h3>
+                <Button color='indigo' fullWidth leftSection={
+                    <IconDownload size={20} />
+                } onClick={downloadThemeObject}>Download Theme Object</Button>
             </div>
         } else {
             return <Title align="center" my={20} order={4} c="dimmed">Select a Tool</Title>
@@ -39,7 +43,8 @@ const Toolbar = ({ selComponent }) => {
 
     return (
         <div>
-            <Title order={4}>Toolbar</Title>
+            <Title order={4} my={10}>Toolbar</Title>
+            <hr />
             {displayTools()}
 
         </div>
