@@ -7,6 +7,7 @@ import classes from './HeroBullets.module.css';
 export function HeroBullets() {
   return (
     <Container size="lg">
+      <BackgroundImage src=''>
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
@@ -52,8 +53,8 @@ export function HeroBullets() {
         </div>
         <img src={'https://www.freecodecamp.org/news/content/images/2022/03/hero.png' }  className={classes.image} />
       </div>
+            </BackgroundImage>
     </Container>
-    
   );
     
 }
