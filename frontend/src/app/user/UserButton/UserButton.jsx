@@ -1,8 +1,12 @@
 import { UnstyledButton, Group, Avatar, Text, rem } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
 import classes from './UserButton.module.css';
+import useAppContext from '@/context/AppContext';
 
 export function UserButton() {
+
+  const { currentUser } = useAppContext();
+
   return (
     <UnstyledButton className={classes.user}>
       <Group>
@@ -13,11 +17,11 @@ export function UserButton() {
 
         <div style={{ flex: 1 }}>
           <Text size="sm" fw={500}>
-            Krishn Kant Shukla
+            {currentUser.name}
           </Text>
 
           <Text c="dimmed" size="xs">
-            krishna@outlook.com
+            {currentUser.email}
           </Text>
         </div>
 

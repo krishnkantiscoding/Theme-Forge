@@ -1,10 +1,15 @@
 'use client';
+import { AppProvider } from '@/context/AppContext';
 import { CustomizerProvider } from '@/context/CustomizerContext'
 import React from 'react'
 
-const Template = ({children}) => {
+const Template = ({ children }) => {
   return (
-    <CustomizerProvider>{children}</CustomizerProvider>
+    <CustomizerProvider>
+      <AppProvider>
+        {children}
+      </AppProvider>
+    </CustomizerProvider>
   )
 }
 

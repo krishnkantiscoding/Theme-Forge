@@ -1,11 +1,9 @@
-const {model, Schema} = require('../connection');
+const { model, Schema, Types } = require('../connection');
 
-const Schema = new Schema({
-    data : {type : String, require : true},
-    user : String,
-    email : {type : String, require : true, unique : true},
-    password : String,
-    createdAt : {type : Date, default: Date.now}
+const mySchema = new Schema({
+    data: { type: String, require: true },
+    user: { type: Types.ObjectId, ref: 'user' },
+    createdAt: { type: Date, default: Date.now }
 })
 
-module.exports = model('user',mySchema);
+module.exports = model('extension', mySchema);

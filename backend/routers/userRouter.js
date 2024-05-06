@@ -31,4 +31,18 @@ router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
 }) 
 
+router.post('/authenticate', (req, res) => {
+    Model.findOne(req.body)
+    .then((result) => {
+        if(result){
+            res.status(200).json(result);
+        }else{
+            res.status(400).json({message: 'User not found'});
+        }
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
+
 module.exports = router;
