@@ -3,7 +3,7 @@ import { Suspense, createContext, lazy, useContext, useEffect, useState } from "
 const CustomizerContext = createContext();
 
 export const CustomizerProvider = ({ children }) => {
-
+ 
     const [VSCodeThemeObject, setVSCodeThemeObject] = useState([]);
     const [selComponent, setSelComponent] = useState(null);
     const [themeObjectPromise, setThemeObjectPromise] = useState(null);
