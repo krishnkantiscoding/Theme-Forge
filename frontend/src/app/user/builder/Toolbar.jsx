@@ -17,17 +17,34 @@ const Toolbar = ({ selComponent }) => {
     }
 
     const downloadThemeObject = () => {
-        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(VSCodeThemeObject));
-        const downloadAnchorNode = document.createElement('a');
-        downloadAnchorNode.setAttribute("href", dataStr);
-        downloadAnchorNode.setAttribute("download", "VSCodeThemeObject.json");
-        document.body.appendChild(downloadAnchorNode); // required for firefox
-        downloadAnchorNode.click();
-        downloadAnchorNode.remove();
+        fetch('http://localhost:5000/extension/generate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ theme: VSCodeThemeObject, name: 'custom-theme'})
+        }).then((response) => {
+            console.log(response);
+            if (response.status === 200) {
+                response.json().then((data) => {
+                    console.log(data);
+                    const downloadAnchorNode = document.createElement('a');
+                    downloadAnchorNode.setAttribute("href", data.downloadPath);
+                    downloadAnchorNode.setAttribute("download", "VSCodeThemeObject.json");
+                    document.body.appendChild(downloadAnchorNode); // required for firefox
+                    downloadAnchorNode.click();
+                    downloadAnchorNode.remove();
+                    // window.open(data.downloadPath, '_blank');
+                });
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+        // const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(VSCodeThemeObject));
     }
 
     const displayTools = () => {
-        if (selComponent!==null) {
+        if (selComponent !== null) {
             return <div>
                 <Title order={5} my={20} align="center">{selComponent.label}</Title>
                 <ColorPicker fullWidth format="hexa" value={colorValue} onChangeEnd={handleColorChange} />
