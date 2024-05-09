@@ -17,7 +17,10 @@ export const CustomizerProvider = ({ children }) => {
     useEffect(() => {
         const loadThemeObject = () => {
             const promise = fetch('/defaultTheme.json')
-                .then((response) => response.json())
+                .then((response) => {
+                    // console.log(response);
+                    return response.json();
+                })
                 .then(data => {
                     setVSCodeThemeObject(data);
                     return data;
