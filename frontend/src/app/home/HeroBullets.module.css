@@ -1,7 +1,7 @@
 .inner {
     display: flex;
     justify-content: space-between;
-    padding-top: calc(var(--mantine-spacing-xl) * 4);
+    padding-top: calc(var(--mantine-spacing-xl));
     padding-bottom: calc(var(--mantine-spacing-xl) * 4);
 }
 
@@ -37,7 +37,7 @@
 
 .image {
     width: rem(500px);
-    height: rem(356px);
+    height: rem(400px);
     object-fit: contain;
     @media (max-width: $mantine-breakpoint-md) {
         display: none;

@@ -4,6 +4,7 @@ import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } fr
 import { IconCheck } from '@tabler/icons-react';
 import classes from './HeroBullets.module.css';
 
+
 export function HeroBullets() {
   return (
     <Container size="lg">
@@ -11,7 +12,7 @@ export function HeroBullets() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-           A <span className={classes.highlight}> modern</span> VsCode <br /> Theme Extensions
+           A <span className={classes.highlight}> Modern VsCode </span> <br /> Theme Customization Tool
           </Title>
           <Text c="dimmed" mt="md">
             Build fully functional Vs Code custom Theme Extensions faster than ever - Theme forge includes
@@ -55,6 +56,5 @@ export function HeroBullets() {
       </div>
             </BackgroundImage>
     </Container>
-  );
-    
+  );   
 }

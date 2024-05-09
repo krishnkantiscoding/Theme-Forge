@@ -7,12 +7,14 @@ import { Icon3dRotate } from '@tabler/icons-react';
 
 import { HeroBullets } from './home/HeroBullets';
 import Navbar from './(main)/navbar';
+import { FeaturesCards } from './home/FeaturesCards';
 
 export default function Home() {
   return (
     <>
       <Navbar/>
       <HeroBullets/>
+      <FeaturesCards/>
     </>
   );
 }
