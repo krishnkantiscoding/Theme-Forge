@@ -15,21 +15,21 @@ import {
   
   const mockdata = [
     {
-      title: 'Extreme performance',
+      title: 'Customization',
       description:
-        'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
+        'Enable users to tailor their coding experience according to their preferences, allowing them to create themes that reflect their unique style, workflow, and personality.',
       icon: IconGauge,
     },
     {
-      title: 'Privacy focused',
+      title: 'User-Friendly Experience',
       description:
-        'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
+        'Offer an intuitive and user-friendly interface that makes it easy for users regardless of their level of expertise, to design and customize themes effortlessly.',
       icon: IconUser,
     },
     {
-      title: 'No third parties',
+      title: 'Enhance Coding Experience',
       description:
-        'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
+        'Enhance the overall coding experience by enabling Users to create Themes that improve Readability, reduce Eye Strain and increase Productivity.',
       icon: IconCookie,
     },
   ];
@@ -56,12 +56,12 @@ import {
       <Container size="lg" py="xl">
         <Group justify="center">
           <Badge variant="filled" size="lg">
-            Best company ever
+            Best Customization Tool
           </Badge>
         </Group>
   
         <Title order={2} className={classes.title} ta="center" mt="sm">
-          Integrate effortlessly with any technology stack
+          Customize your VsCode Completely with Our Exclusive Customization Tools
         </Title>
   
         <Text c="dimmed" className={classes.description} ta="center" mt="md">

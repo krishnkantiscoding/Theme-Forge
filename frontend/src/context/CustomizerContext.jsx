@@ -7,10 +7,12 @@ export const CustomizerProvider = ({ children }) => {
     const [VSCodeThemeObject, setVSCodeThemeObject] = useState([]);
     const [selComponent, setSelComponent] = useState(null);
     const [themeObjectPromise, setThemeObjectPromise] = useState(null);
+    const [currentPreview, setCurrentPreview] = useState('');
 
     const isObjectLoading = () => {
         return VSCodeThemeObject.length === 0;
     }
+    
 
     const LazyChildren = lazy(() => themeObjectPromise.then(() => ({ default: () => children })));
 
@@ -40,7 +42,9 @@ export const CustomizerProvider = ({ children }) => {
         setVSCodeThemeObject,
         selComponent,
         setSelComponent,
-        isObjectLoading
+        isObjectLoading,
+        currentPreview,
+        setCurrentPreview
     }} >
         <Suspense fallback={<div>Loading...</div>}>
             <LazyChildren />

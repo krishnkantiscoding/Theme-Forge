@@ -3,7 +3,7 @@ import { Group, Box, Collapse, ThemeIcon, Text, UnstyledButton, rem } from '@man
 import { IconCalendarStats, IconChevronRight } from '@tabler/icons-react';
 import classes from './NavbarLinksGroup.module.css';
 
-export function LinksGroup({ icon: Icon, label, initiallyOpened, links, setSelComponent }) {
+export function LinksGroup({ icon: Icon, label, initiallyOpened, links, setSelComponent, setCurrentPreview }) {
   const hasLinks = Array.isArray(links);
   const [opened, setOpened] = useState(initiallyOpened || false);
   const items = (hasLinks ? links : []).map((link) => (
@@ -15,6 +15,7 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links, setSelCo
       onClick={(event) => {
         event.preventDefault()
         setSelComponent(link)
+        // setCurrentPreview(link.preview)
       }}>
       {link.label}
     </Text>

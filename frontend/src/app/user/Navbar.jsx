@@ -21,6 +21,7 @@ import { LinksGroup } from './NavbarLinksGroup/NavbarLinksGroup';
 import classes from './NavbarNested.module.css';
 import useCustomizerContext from '@/context/CustomizerContext';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const mockdata = [
   {
@@ -416,7 +417,10 @@ const filterCategory = (propertyName, category) => {
 }
 
 export default function NavbarNested({ setSelComponent }) {
-  const { VSCodeThemeObject, isObjectLoading } = useCustomizerContext();
+
+  const router = useRouter();
+  const { VSCodeThemeObject, isObjectLoading, setCurrentPreview } = useCustomizerContext();
+  console.log(VSCodeThemeObject);
   const links = colorCategories.map(category => (
     {
       label: category,
@@ -424,6 +428,7 @@ export default function NavbarNested({ setSelComponent }) {
       links: Object.keys(VSCodeThemeObject.colors).filter(propertyName => filterCategory(propertyName, category)).map(propertyName => (
         {
           label: propertyName,
+          preview: propertyName+'_img.png',
           link: '/',
           options: {
             color: VSCodeThemeObject.colors[propertyName]
@@ -431,7 +436,7 @@ export default function NavbarNested({ setSelComponent }) {
         }
       ))
     }
-  )).map((item) => <LinksGroup {...item} key={item.label} setSelComponent={setSelComponent} />);
+  )).map((item) => <LinksGroup {...item} key={item.label} setSelComponent={setSelComponent} setCurrentPreview={setCurrentPreview} />);
 
   // console.log(VSCodeThemeObject);
 
@@ -448,7 +453,7 @@ export default function NavbarNested({ setSelComponent }) {
   return (
     <nav className={classes.navbar}>
       <div className={classes.header}>
-        <Title order={3}>ThemeForge</Title>
+        <Title onClick={e => router.push('/')} order={3}>ThemeForge</Title>
       </div>
 
       <ScrollArea className={classes.links}>

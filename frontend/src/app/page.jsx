@@ -8,6 +8,7 @@ import { Icon3dRotate } from '@tabler/icons-react';
 import { HeroBullets } from './home/HeroBullets';
 import Navbar from './(main)/navbar';
 import { FeaturesCards } from './home/FeaturesCards';
+import { FooterCentered } from './home/FooterCentered';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar/>
       <HeroBullets/>
       <FeaturesCards/>
+      <FooterCentered/>
     </>
   );
 }
