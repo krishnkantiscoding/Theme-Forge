@@ -372,6 +372,7 @@ const colorCategories = [
   'activityBar',
   'sideBar',
   'list',
+  'list2'
   'tree',
   'listFilterWidget',
   'statusBar',
