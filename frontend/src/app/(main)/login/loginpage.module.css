@@ -1,7 +1,7 @@
 .wrapper {
     /*min-height: rem(900px);*/
     background-size: cover;
-    background-image: url();
+    background-image: url('/loginpage_img.jpg');
   }
   
   .form {

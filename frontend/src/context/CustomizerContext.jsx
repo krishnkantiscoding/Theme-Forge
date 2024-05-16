@@ -12,7 +12,6 @@ export const CustomizerProvider = ({ children }) => {
     const isObjectLoading = () => {
         return VSCodeThemeObject.length === 0;
     }
-    
 
     const LazyChildren = lazy(() => themeObjectPromise.then(() => ({ default: () => children })));
 
@@ -20,7 +19,7 @@ export const CustomizerProvider = ({ children }) => {
         const loadThemeObject = () => {
             const promise = fetch('/defaultTheme.json')
                 .then((response) => {
-                    // console.log(response);
+                    console.log(response);
                     return response.json();
                 })
                 .then(data => {
