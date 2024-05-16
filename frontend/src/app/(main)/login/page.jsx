@@ -45,7 +45,7 @@ function Login() {
       .then((response) => {
         console.log(response.status);
         if (response.status === 200) {
-          toast.success('User Loggedin Successfully');
+          toast.success('User Logged In Successfully');
           setLoggedIn(true);
           response.json()
             .then((result) => {
