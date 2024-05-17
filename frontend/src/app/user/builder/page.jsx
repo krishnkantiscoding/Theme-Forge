@@ -1,5 +1,6 @@
 'use client';
 import useCustomizerContext from '@/context/CustomizerContext';
+import { Title } from '@mantine/core';
 import React from 'react'
 
 const Builder = () => {
@@ -8,11 +9,11 @@ const Builder = () => {
 
   return (
     <div>
-      {/* {
+      {
         currentPreview && (
-          <img style={{width: '100%'}} src={`/${currentPreview}`} alt="" />
+          <img style={{ height: '100%', bottom: currentPreview.includes('statusBar') ? '0px' : '' }} src={`/${currentPreview}`} alt="" />
         )
-      } */}
+      }
     </div>
   )
 }

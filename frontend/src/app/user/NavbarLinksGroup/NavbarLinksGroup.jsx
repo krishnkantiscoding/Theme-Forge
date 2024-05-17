@@ -15,7 +15,7 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links, setSelCo
       onClick={(event) => {
         event.preventDefault()
         setSelComponent(link)
-        // setCurrentPreview(link.preview)
+        setCurrentPreview(link.preview)
       }}>
       {link.label}
     </Text>

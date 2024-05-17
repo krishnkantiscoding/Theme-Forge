@@ -428,7 +428,7 @@ export default function NavbarNested({ setSelComponent }) {
       links: Object.keys(VSCodeThemeObject.colors).filter(propertyName => filterCategory(propertyName, category)).map(propertyName => (
         {
           label: propertyName,
-          preview: propertyName+'_img.png',
+          preview: propertyName.split('.')[0]+'_img.png',
           link: '/',
           options: {
             color: VSCodeThemeObject.colors[propertyName]

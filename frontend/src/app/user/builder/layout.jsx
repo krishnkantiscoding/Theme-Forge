@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
       padding="md"
     >
       <AppShell.Header>
-      Home Profile Dashboard ThemeSamples
       </AppShell.Header>
       <AppShell.Navbar>
         {/* <Sidebar /> */}
