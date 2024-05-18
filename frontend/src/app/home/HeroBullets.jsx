@@ -52,8 +52,9 @@ export function HeroBullets() {
             </Button>
           </Group>
         </div>
-        <img src={'https://www.freecodecamp.org/news/content/images/2022/03/hero.png' }  className={classes.image} />
+        <img src={''}  className={classes.image} />
       </div>
+      {/* https://www.freecodecamp.org/news/content/images/2022/03/hero.png */}
             </BackgroundImage>
     </Container>
   );   
