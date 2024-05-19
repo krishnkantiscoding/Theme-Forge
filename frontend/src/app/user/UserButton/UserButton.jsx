@@ -11,7 +11,7 @@ export function UserButton() {
     <UnstyledButton className={classes.user}>
       <Group>
         <Avatar
-          src="/frontend/public/ghdp.pnghh"
+          src="/ghdp.png"
           radius="xl"
         />
 

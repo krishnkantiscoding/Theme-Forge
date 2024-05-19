@@ -1,22 +1,23 @@
 'use client';
 import React from 'react'
 import { useState } from 'react';
-import { Container, Group, Burger, Title, Button } from '@mantine/core';
+import { Container, Group, Burger, Title, Button, Anchor } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './navbar.module.css';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const links = [
   { link: '/signup', label: 'Signup' },
   { link: '/login', label: 'Login' },
   { link: '/user/builder', label: 'Customize' },
-  { link: '/community', label: 'Community' },
 ];
 
 export function Navbar() {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
+
+  const pathname = usePathname();
 
   const router = useRouter();
   // console.log(router.);
@@ -25,7 +26,7 @@ export function Navbar() {
       component={Link}
       key={link.label}
       href={link.link}
-      variant='transparent'
+      variant={pathname === link.link ? 'filled' : 'light'}
       // data-active={pathname === link.link || undefined}
     >
       {link.label}

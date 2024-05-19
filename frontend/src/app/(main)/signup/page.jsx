@@ -77,11 +77,6 @@ function Signup(props) {
         Welcome to Theme Forge, Register with
       </Text>
 
-      <Group grow mb="md" mt="md">
-        <GoogleButton radius="xl">Google</GoogleButton>
-        <GithubButton radius="xl">Github</GithubButton>
-      </Group>
-
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form onSubmit={form.onSubmit(signupSubmit)}>
@@ -129,7 +124,7 @@ function Signup(props) {
         </Stack>
 
         <Group justify="space-between" mt="xl">
-          <Anchor component="button" type="button" c="dimmed" onClick={() => toggle()} size="xs">
+          <Anchor component="button" type="button" c="dimmed" onClick={() => router.push('/login')} size="xs">
             Already have an account?Login
           </Anchor>
           <Button type="submit" radius="xl">

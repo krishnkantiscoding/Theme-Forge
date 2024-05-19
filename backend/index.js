@@ -7,6 +7,7 @@ const app = express();
 
 const userRouter = require('./routers/userRouter');
 const extensionRouter = require('./routers/extensionRouter');
+const utilRouter = require('./routers/utilRouter');
 
 // middleware
 app.use(cors({
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 app.use('/extension', extensionRouter);
+app.use('/util', utilRouter);
 
 app.use(express.static('./static'));
 

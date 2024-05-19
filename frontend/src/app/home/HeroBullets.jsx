@@ -8,14 +8,13 @@ import classes from './HeroBullets.module.css';
 export function HeroBullets() {
   return (
     <Container size="lg">
-      <BackgroundImage src=''>
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
            A <span className={classes.highlight}> Modern VsCode </span> <br /> Theme Customization Tool
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional Vs Code custom Theme Extensions faster than ever - Theme forge includes
+            Build fully functional Vs Code Custom Theme Extension Tool faster than ever - Theme forge includes
             multiple customizable options and provide you with Beautiful and exclusive Themes.
           </Text>
 
@@ -34,12 +33,7 @@ export function HeroBullets() {
               export types
             </List.Item>
             <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-              any project
-            </List.Item>
-            <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
+              <b>Free and open source</b> – all packages are open source and freely available over Github
             </List.Item>
           </List>
 
@@ -52,10 +46,8 @@ export function HeroBullets() {
             </Button>
           </Group>
         </div>
-        <img src={''}  className={classes.image} />
+        <img src={'/vscodehome_img.jpg'}  className={classes.image} />
       </div>
-      {/* https://www.freecodecamp.org/news/content/images/2022/03/hero.png */}
-            </BackgroundImage>
     </Container>
   );   
 }
