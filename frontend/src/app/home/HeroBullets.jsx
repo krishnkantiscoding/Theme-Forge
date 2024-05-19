@@ -18,7 +18,7 @@ export function HeroBullets() {
            A <span className={classes.highlight}> Modern VsCode </span> <br /> Theme Customization Tool
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional Vs Code Custom Theme Extension Tool faster than ever - Theme forge includes
+            Build fully functional Vs Code Theme Customization Tool with Extension faster than ever - Theme forge includes
             multiple customizable options and provide you with Beautiful and exclusive Themes.
           </Text>
 

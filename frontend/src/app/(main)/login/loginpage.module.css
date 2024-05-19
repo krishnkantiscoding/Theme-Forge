@@ -1,5 +1,5 @@
 .wrapper {
-    min-height: rem(500px); 
+    height: rem(700px); 
     background-size: cover;
     background-position: center;
     background-image: url('/loginpage_img.jpg');

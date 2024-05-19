@@ -14,6 +14,7 @@ import {
   Anchor,
   Stack,
   Container,
+  BackgroundImage,
 } from '@mantine/core';
 import { GoogleButton } from './GoogleButton';
 import {GithubIcon} from '@mantinex/dev-icons';
@@ -76,8 +77,7 @@ function Signup(props) {
       <Text size="lg" fw={500}>
         Welcome to Theme Forge, Register with
       </Text>
-
-      <Divider label="Or continue with email" labelPosition="center" my="lg" />
+      <br />
 
       <form onSubmit={form.onSubmit(signupSubmit)}>
         <Stack>
