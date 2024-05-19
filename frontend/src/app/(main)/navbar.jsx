@@ -36,8 +36,9 @@ export function Navbar() {
   return (
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
-        <Title order={3}>Theme Forge</Title>
-        <Group gap={5} visibleFrom="xs">
+        {/* <img height={50} src="/PROJECT_LOGO.png" alt="" /> */}
+        <Title onClick={() => {router.push('/')}} order={3}>Theme Forge</Title>
+        <Group gap={20} visibleFrom="xs">
           {items}
         </Group>
 

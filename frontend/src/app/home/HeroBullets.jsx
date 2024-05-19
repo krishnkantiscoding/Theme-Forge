@@ -3,9 +3,13 @@ import { BackgroundImage } from '@mantine/core';
 import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
 import classes from './HeroBullets.module.css';
+import { useRouter } from 'next/navigation';
 
 
 export function HeroBullets() {
+
+  const router=useRouter();
+
   return (
     <Container size="lg">
       <div className={classes.inner}>
@@ -38,7 +42,7 @@ export function HeroBullets() {
           </List>
 
           <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
+            <Button onClick={() => {router.push('/signup')}} radius="xl" size="md" className={classes.control}>
               Get started
             </Button>
             <Button variant="default" radius="xl" size="md" className={classes.control}>
