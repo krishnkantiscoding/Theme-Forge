@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
       padding="md"
     >
       <AppShell.Header>
+      Customize Your Vs Code Here.
       </AppShell.Header>
       <AppShell.Navbar>
         {/* <Sidebar /> */}
@@ -40,7 +41,7 @@ const Layout = ({ children }) => {
           )
         }
       </AppShell.Aside>
-      <AppShell.Footer p="md">Footer</AppShell.Footer>
+      <AppShell.Footer p="md"></AppShell.Footer>
     </AppShell>
   );
 }

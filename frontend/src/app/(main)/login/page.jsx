@@ -88,11 +88,19 @@ function Login() {
         </form>
 
         <Text ta="center" mt="md">
+          Forgot your Password?{' '}
+          <Anchor  fw={700} onClick={(event) => router.push('/resetPassword')}>
+            Reset
+          </Anchor>
+        </Text>
+
+        <Text ta="center" mt="md">
           Don&apos;t have an account?{' '}
-          <Anchor href="#" fw={700} onClick={(event) => event.preventDefault()}>
+          <Anchor  fw={700} onClick={(event) => router.push('/signup')}>
             Register
           </Anchor>
         </Text>
+
       </Paper>
     </div>
   );

@@ -75,7 +75,7 @@ function Signup(props) {
     <Container size='sm'>
     <Paper radius="md" p="xl" withBorder {...props}>
       <Text size="lg" fw={500}>
-        Welcome to Theme Forge, Register with
+        Welcome to Theme Forge, Register here
       </Text>
       <br />
 
